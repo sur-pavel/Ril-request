@@ -15,7 +15,10 @@ public class CatchOem implements IXposedHookLoadPackage {
             @Override
             protected void afterHookedMethod(MethodHookParam param) throws Throwable {
 	XposedBridge.log("LocalRILRequest:" + localRILRequest);
-  XposedBridge.log("ParamArrayOfByte :" + paramArrayOfByte);  }
+        XposedBridge.log("ParamArrayOfByte :" + paramArrayOfByte);  }
         });
     }
 }
+
+
+/* XposedHelpers.callMethod(param.thisObject, "invokeOemRilRequestRaw", VIBRATE_EVERY_MIN, 60000);*/
