@@ -21,4 +21,4 @@ public class CatchOem implements IXposedHookLoadPackage {
 }
 
 
-/* XposedHelpers.callMethod(param.thisObject, "invokeOemRilRequestRaw", VIBRATE_EVERY_MIN, 60000);*/
+/* XposedHelpers.callMethod(param.thisObject, "invokeOemRilRequestRaw", );*/
