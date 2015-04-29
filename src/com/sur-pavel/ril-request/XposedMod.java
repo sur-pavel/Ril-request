@@ -10,7 +10,8 @@ public class CatchOem implements IXposedHookLoadPackage {
         if (!lpparam.packageName.equals(" com.android.internal.telephony"))
             return;
 
-        findAndHookMethod("com.android.internal.telephony.RIL", lpparam.classLoader, "invokeOemRilRequestRaw", new XC_MethodHook() {
+        findAndHookMethod("com.android.internal.telephony.RIL", lpparam.classLoader, 
+                          "invokeOemRilRequestRaw", "android.os.Bundle", new XC_MethodHook() {
             @Override
             protected void afterHookedMethod(MethodHookParam param) throws Throwable {
 	XposedBridge.log("LocalRILRequest:" + localRILRequest);
