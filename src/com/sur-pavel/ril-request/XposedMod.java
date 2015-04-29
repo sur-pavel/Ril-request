@@ -15,7 +15,6 @@ public class CatchOem implements IXposedHookLoadPackage {
                           "invokeOemRilRequestRaw", "android.os.Bundle", new XC_MethodHook() {
             @Override
             protected void afterHookedMethod(MethodHookParam param) throws Throwable {
-	TextView tv = (TextView) param.thisObject;
 	XposedBridge.log("invokeOemRilRequestRaw arguments:" + tv);
           }
         });
