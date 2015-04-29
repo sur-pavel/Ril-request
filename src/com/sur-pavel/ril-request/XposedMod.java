@@ -8,7 +8,7 @@ import android.widget.TextView;
 
 public class CatchOem implements IXposedHookLoadPackage {
     public void handleLoadPackage(final LoadPackageParam lpparam) throws Throwable {
-        if (!lpparam.packageName.equals(" com.android.internal.telephony"))
+        if (!lpparam.packageName.equals("com.android.internal.telephony"))
             return;
 
         findAndHookMethod("com.android.internal.telephony.RIL", lpparam.classLoader, 
