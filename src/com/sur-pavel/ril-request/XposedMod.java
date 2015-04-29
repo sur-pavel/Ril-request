@@ -23,4 +23,21 @@ public class CatchOem implements IXposedHookLoadPackage {
 }
 
 
-/* XposedHelpers.callMethod(param.thisObject, "invokeOemRilRequestRaw", );*/
+/* XposedHelpers.callMethod(param.thisObject, "invokeOemRilRequestRaw", );
+
+
+Method m = XposedHelpers.findMethodExact(clazz, "getString", String.class);
+
+    m.setAccessible(true);
+
+    XposedBridge.hookMethod(m, new XC_MethodHook() {
+        @Override
+        protected void beforeHookedMethod(MethodHookParam param) throws Throwable {
+            log("call -> " + (String) param.args[0]);
+            super.beforeHookedMethod(param);
+        }
+    });
+
+    String id = (String) m.invoke(null, "ro.build.id");
+    log("step 1 try invoke->" + id);
+    log("step 2 Call Build.ID ->" + Build.ID);}}`   */
